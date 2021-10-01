@@ -1,11 +1,17 @@
-// ignore_for_file: avoid_print
-// ignore_for_file: use_key_in_widget_constructors
 // ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  final miEstilo = TextStyle(fontSize: 30);
-  int contador = 10;
+class ContadorPage extends StatefulWidget {
+  ContadorPage({Key? key}) : super(key: key);
+
+  @override
+  _ContadorPageState createState() => _ContadorPageState();
+}
+
+class _ContadorPageState extends State<ContadorPage> {
+  final _miEstilo = TextStyle(fontSize: 30);
+  int _contador = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,8 @@ class HomePage extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
             onPressed: () {
-              //contador++;
+              _contador++;
+              setState(() {});
             },
             child: Icon(Icons.add)),
         appBar: AppBar(
@@ -25,8 +32,8 @@ class HomePage extends StatelessWidget {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-              Text("Hola Mundo 1", style: miEstilo),
-              Text(contador.toString(), style: miEstilo)
+              Text("Hola Mundo 1", style: _miEstilo),
+              Text(_contador.toString(), style: _miEstilo)
             ])));
   }
 }
