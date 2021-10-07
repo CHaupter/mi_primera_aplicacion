@@ -20,7 +20,6 @@ class _ContadorPageState extends State<ContadorPage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Texto_APPBAR"),
-        elevation: 20,
       ),
       body: Center(
           child: Column(
